@@ -1,0 +1,8 @@
+{
+    "name": "niif/simplesamlphp-module-ftickslogger",
+    "description": "F-TICKS logger for simplesamlphp",
+    "type": "simplesamlphp-module",
+    "require": {
+        "simplesamlphp/composer-module-installer": "~1.0"
+    }
+}
