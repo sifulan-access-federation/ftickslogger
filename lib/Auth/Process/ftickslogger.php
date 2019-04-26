@@ -15,7 +15,7 @@ class sspmod_ftickslogger_Auth_Process_ftickslogger extends SimpleSAML_Auth_Proc
 	private $attribute = NULL;
 	private $secretsalt = NULL;
 
-	private $typeTag = 'F-TICKS/SIFULAN/1.0/';
+	private $typeTag = 'F-TICKS/SIFULAN/1.0';
 
 	/**
 	 * Initialize this filter.
@@ -59,6 +59,7 @@ class sspmod_ftickslogger_Auth_Process_ftickslogger extends SimpleSAML_Auth_Proc
 		$RP = 'NA';
 		$PN = 'NA';
 		$AM = 'urn:oasis:names:tc:SAML:2.0:ac:classes:Password';
+		$RESULT = 'OK';
 
 		if (array_key_exists($this->attribute, $state['Attributes'])) {
 			$PN = hash('sha256', $state['Attributes'][$this->attribute][0] . $this->secretsalt);
@@ -71,7 +72,7 @@ class sspmod_ftickslogger_Auth_Process_ftickslogger extends SimpleSAML_Auth_Proc
 			$RP = $state['Destination']['entityid'];
 		}
 
-		SimpleSAML_Logger::stats($this->typeTag . '#TS=' . $TS . '#AP=' . $AP . '#RP=' . $RP . '#PN=' . $PN . '#AM=' . $AM . '#');
+		SimpleSAML\Logger::stats($this->typeTag . '#TS=' . $TS . '#RP=' . $RP . '#AP=' . $AP . '#PN=' . $PN . '#RESULT=' . $RESULT . '#');
 	}
 
 }
