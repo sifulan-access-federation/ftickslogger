@@ -4,7 +4,11 @@ With this module your simpleSAMLphp IdP will be able to write statistical logs i
 
 ## Install
 
-`composer.phar require niif/simplesamlphp-module-ftickslogger:1.*`
+Go to modules directory, type the following command
+
+`git clone https://github.com/sifulan-access-federation/ftickslogger.git`
+
+`touch ftickslogger/enable`
 
 ## Usage
 
